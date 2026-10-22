@@ -1,0 +1,54 @@
+The kit you need
+3 core visual sets
+1. Cold-open & kinetic title stage — Built for a terminal → live ui canvas cut opening. High-contrast typography and macro focal framing lock viewer attention in the first 2 seconds before any logo bumper.
+
+2. Hero Replit workspace canvas — Clean 16:9 product capture styled with Remotion, Screen Studio, Warp / Ghostty. Browser chrome and status bars are stripped so cursor paths and state transitions read clearly on mobile feeds.
+
+3. Velocity montage & CTA endplate — Rapid feature proof cuts (rhythmic (1.9s avg shot)) resolving into a centered Replit brand lockup (replit.com).
+
+Camera, cursor & motion system
+Uses spring-damped camera zooms (1.35× to 1.6× macro push-ins, cubic-bezier 0.22, 1, 0.36, 1) to guide the viewer's eye from prompt/input trigger to live output, paired with kinetic callout cards.
+
+Standout sequence
+The transition from Act 01 (THE HOOK) into Act 02 (HERO UI REVEAL) at 0:04 drops straight from the tension hook into a continuous live workflow take before accelerating into the Act 03 velocity cuts at 0:11.
+
+Sound
+Mechanical Switch Foley + Breakbeat Pulse (Tight Studio Cut (No Room Reverb)) paced around 126 BPM. Key transient cues: 00:00 KEY-CLICK + WHOOSH · 00:04 SUB-BASS DROP (65Hz) · 00:11 16TH-NOTE UI TICKS · 00:20 ANALOGUE SYNTH RESOLVE.
+
+Remotion timeline
+Copy code
+import {AbsoluteFill, Sequence} from "remotion";
+
+// Replit Replit, rebuilt from the measured cut list
+// 9 shots, 0:25 at 24 fps (600 frames)
+export const ReplitLaunch = () => (
+  <AbsoluteFill style={{backgroundColor: "#101012"}}>
+    <Sequence from={0} durationInFrames={44} name="S01_Fullscreentype">
+      {/* Replit cold open: terminal → live ui canvas cut establishing the core premise on frame 1 | text: "Now you can give your teammate the full context rather than just the s..." */}
+    </Sequence>
+    <Sequence from={44} durationInFrames={52} name="S02_UIandscreen">
+      {/* Tight macro push-in onto the Replit trigger state — prompt bar, command input, or starting canvas | text: "Now you can give your teammate the full context rather than just the summary." */}
+    </Sequence>
+    <Sequence from={96} durationInFrames={57} name="S03_UIandscreen">
+      {/* Full-bleed reveal of the core Replit workspace as live execution begins | text: "Share a Replit conversation so they can read the work behind your findings, decisions, and next steps." */}
+    </Sequence>
+    <Sequence from={153} durationInFrames={55} name="S04_Headgraphics">
+      {/* Focal highlight & UI callout overlay isolating Replit's primary output state | text: "For teammates in your workspace." */}
+    </Sequence>
+    <Sequence from={209} durationInFrames={55} name="S05_UIandscreen">
+      {/* Continuous interaction loop completing the primary Replit workflow end-to-end | text: "No copy-pasting the whole chat." */}
+    </Sequence>
+    <Sequence from={264} durationInFrames={73} name="S06_UIandscreen">
+      {/* Rapid downbeat cut #1: secondary Replit workflow & multi-state UI proof | text: "Now you can give your teammate the full context rather than just the s..." */}
+    </Sequence>
+    <Sequence from={337} durationInFrames={71} name="S07_Chartordiagram">
+      {/* Rapid downbeat cut #2: capability proof, speed comparison, or structured output view | text: "Now you can give your teammate the full context rather than just the summary." */}
+    </Sequence>
+    <Sequence from={409} durationInFrames={71} name="S08_3DandCAD">
+      {/* Rapid downbeat cut #3: close-up inspection of Replit refinement, export, or agent handoff | text: "Share a Replit conversation so they can read the work behind your findings, decisions, and next steps." */}
+    </Sequence>
+    <Sequence from={480} durationInFrames={120} name="S09_Fullscreentype">
+      {/* Replit brand mark, launch headline, and availability CTA lockup | text: "Replit — replit.com" */}
+    </Sequence>
+  </AbsoluteFill>
+);
